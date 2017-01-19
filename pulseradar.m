@@ -129,6 +129,9 @@ plot((1:tot_samples)*sampling_interval,coh);
 hold on
 plot((1:tot_samples)*sampling_interval,c_thresh*ones(1,length(coh)),'r-');
 
+title('Coherent Integration')
+xlabel('Time(s)');
+ylabel('Signal level');
 
 % the code with det1 and det2 is used to detect when the output exceeds
 % threshold and marks the beginning of each time it exceeds threshold as a
@@ -148,6 +151,10 @@ figure
 plot((1:tot_samples)*sampling_interval,noncoh);
 hold on
 plot((1:tot_samples)*sampling_interval,nc_thresh*ones(1,length(coh)),'r-');
+
+title('Non-Coherent Integration')
+xlabel('Time(s)');
+ylabel('Signal level');
 
 det1=find(noncoh>nc_thresh);
 det1 = [det1(1) det1];
